@@ -1,8 +1,5 @@
 <pre>index route</pre><br> 
 {{#each model as |post|}}
-  <h1>{{post.title}}</h1>
-  <p>by <em>{{post.author.name}}</em></p>
-  <div class="post-body">
-    {{{post.body}}}
-  </div>
+  {{#blog-post post=post}}
+  {{/blog-post}}
 {{/each}}

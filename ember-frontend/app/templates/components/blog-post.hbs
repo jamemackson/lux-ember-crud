@@ -1,0 +1,16 @@
+<h1>{{post.title}}</h1>
+<p>by <em>{{post.author.name}}</em></p>
+{{#if isEditing}}
+  <button {{action "cancelEdits" post}}>cancel</button>
+  <button {{action "saveEdits" post}}>save</button>
+  <br>
+  Edit Title: {{input value=post.title}}<br>
+  Body:<br>
+  {{textarea value=post.body cols="100" rows="15"}}
+{{else}}
+  <button {{action "toggleEditing"}}>EDIT</button>
+  <div class="post-body">
+    {{yield}}
+    {{{post.body}}}
+  </div>
+{{/if}}
